@@ -7,6 +7,8 @@ import Dashboard from './components/Dashboard';
 import UsersManagement from './components/UsersManagement';
 import GradingTips from './components/GradingTips';
 import GradingSubmission from './components/GradingSubmission';
+import ProductCatalog from './components/ProductCatalog';
+import SuccessPage from './components/SuccessPage';
 import Layout from './components/Layout';
 import { AdminProvider, useAdmin } from './contexts/AdminContext';
 
@@ -50,11 +52,13 @@ function AppRoutes() {
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="submit" element={<GradingSubmission />} />
         <Route path="tips" element={<GradingTips />} />
+        <Route path="products" element={<ProductCatalog />} />
         {isAdmin && (
           <Route path="users" element={<UsersManagement />} />
         )}
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Route>
+      <Route path="/success" element={<SuccessPage />} />
     </Routes>
   );
 }

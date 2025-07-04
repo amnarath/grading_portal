@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom';
-import { ClipboardList, LogOut, Lightbulb, Users, ShoppingCart, PlusCircle, Clock, Menu, X } from 'lucide-react';
+import { ClipboardList, LogOut, Lightbulb, Users, ShoppingCart, PlusCircle, Clock, Menu, X, CreditCard } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { useAdmin } from '../contexts/AdminContext';
 import { addDays, format, formatDistanceToNow } from 'date-fns';
@@ -66,9 +66,10 @@ export default function Layout() {
     { to: '/dashboard', icon: <ClipboardList className="h-4 w-4 mr-1" />, text: 'Dashboard' },
     { to: '/submit', icon: <PlusCircle className="h-4 w-4 mr-1" />, text: 'Submit Cards' },
     { to: '/tips', icon: <Lightbulb className="h-4 w-4 mr-1" />, text: 'Grading Tips' },
+    { to: '/products', icon: <ShoppingCart className="h-4 w-4 mr-1" />, text: 'Products' },
     {
       href: 'https://pikamon.eu/collections/accessories',
-      icon: <ShoppingCart className="h-4 w-4 mr-1" />,
+      icon: <CreditCard className="h-4 w-4 mr-1" />,
       text: 'Buy Accessories',
       external: true
     },

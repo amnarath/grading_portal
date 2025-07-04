@@ -3,8 +3,9 @@ import { supabase } from '../lib/supabase';
 import { format } from 'date-fns';
 import type { GradingEntry, PaymentStatus } from '../lib/supabase';
 import PaymentButton from './PaymentButton';
+import UserSubscription from './UserSubscription';
 import { Link } from 'react-router-dom';
-import { PlusCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import { PlusCircle, ChevronLeft, ChevronRight, ShoppingCart } from 'lucide-react';
 
 const ENTRIES_PER_PAGE = 5;
 
@@ -165,6 +166,34 @@ export default function Dashboard() {
                 </dd>
               </div>
             </dl>
+          </div>
+        </div>
+      </div>
+
+      {/* Subscription Section */}
+      <UserSubscription />
+
+      {/* Quick Actions Section */}
+      <div className="glass-card rounded-xl overflow-hidden hover-glow">
+        <div className="px-4 py-5 sm:p-6">
+          <h3 className="text-lg font-medium leading-6 text-pikamon-dark-text mb-4">
+            Quick Actions
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <Link
+              to="/submit"
+              className="glass-button px-6 py-4 rounded-lg text-base font-medium flex items-center gap-3 justify-center"
+            >
+              <PlusCircle className="w-5 h-5" />
+              Submit New Cards
+            </Link>
+            <Link
+              to="/products"
+              className="glass-button px-6 py-4 rounded-lg text-base font-medium flex items-center gap-3 justify-center"
+            >
+              <ShoppingCart className="w-5 h-5" />
+              Browse Products
+            </Link>
           </div>
         </div>
       </div>
